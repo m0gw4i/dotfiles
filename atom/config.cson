@@ -1,0 +1,13 @@
+"*":
+  "exception-reporting":
+    userId: "4b391a98-1202-502d-c64a-85da5639c751"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "nucleus-dark-ui"
+      "adventurous-syntax"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
