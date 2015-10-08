@@ -1,8 +1,14 @@
+@import "ui-variables.less";
+@import "ui-mixins.less";
+@import "octicon-mixins";
+
 // Buttons ---------------------------------------------------------------------
+.btn-default,
 .btn {
   .button(@button-border-color);
 
-  &:focus, &:active:focus {
+  &:focus,
+  &:active:focus {
     outline: 0;
     border: 1px solid @text-color-selected !important;
   }
@@ -31,52 +37,72 @@
   &.btn-primary {
     .button-variant(@text-color-info);
   }
+
   &.btn-info {
     .button-variant(@text-color-info);
   }
+
   &.btn-success {
     .button-variant(@text-color-success);
   }
+
   &.btn-warning {
     .button-variant(@text-color-warning);
   }
+
   &.btn-error {
     .button-variant(@text-color-error);
   }
+
   &.status-indicator {
     border-width: 0 !important;
+  }
+}
+
+.btn-group {
+  & > .btn:first-child {
+    border-left: 1px solid @button-border-color;
+  }
+
+  & > .btn:last-child {
+    border-right: 1px solid @button-border-color;
   }
 }
 
 // Mixins ----------------------------------------------------------------------
 .button(@color) {
   color: @text-color;
-  font-family: @font-family;
   font-size: @font-size;
-  letter-spacing: 0.04em;
-  font-weight: 300;
+  font-weight: 400;
   background: transparent;
   height: @input-height;
-  height: @input-height - 2px;
+  line-height: @input-height;
   border-radius: @component-border-radius;
-  border: 1px solid @color !important;
+  border-color: @color;
+  border-width: 1px !important;
+  border-style: solid !important;
   box-shadow: none !important;
   transition: all @transition-time ease;
+  padding: 0 10px;
 
   &:focus {
     outline: none;
   }
+
   &:focus,
-  &[disabled],
   &:hover {
     color: @text-color-highlight;
     background: @color;
+    border-color: @color;
   }
-  &:active {
+
+  &:active,
+  &:active:focus {
     color: @text-color-selected;
     background: @color;
     border: 1px solid @text-color-selected !important;
   }
+
   &.selected {
     color: @text-color-selected;
     background: @button-background-color-selected;
@@ -86,13 +112,28 @@
       background: @color;
     }
   }
+
+  &[disabled] {
+    opacity: 1;
+    background-color: transparent;
+    border-color: @base-border-color !important;
+    color: @base-border-color !important;
+  }
 }
 
 .button-variant(@color) {
-  .button(@color);
+  .button(mix(@color, @base-background-color, 32%));
+  border-color: mix(@color, @base-background-color, 32%) !important;
   color: @color;
 
+  &:hover {
+    border-color: mix(@color, @base-background-color, 32%) !important;
+  }
   &.selected {
     color: @color;
   }
+}
+
+button[click="cancel"] {
+  .button-variant(@text-color-error) !important;
 }

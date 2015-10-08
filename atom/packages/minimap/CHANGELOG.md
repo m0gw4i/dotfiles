@@ -1,3 +1,17 @@
+<a name="v4.13.4"></a>
+# v4.13.4 (2015-09-25)
+
+## :bug: Bug Fixes
+
+- Use provided text editor ([e2883013](https://github.com/atom-minimap/minimap/commit/e2883013edf707205a94b7aabf3f063f7ae42149))
+
+<a name="4.13.3"></a>
+# 4.13.3 (2015-09-08)
+
+## :bug: Bug Fixes
+
+- Use cache when reading DOM for color when highlighting is disabled ([b9ae0f54](https://github.com/atom-minimap/minimap/commit/b9ae0f54f571d025eaefdf99ce94bdc66ebc89c1), [#384](https://github.com/atom-minimap/minimap/issues/384))
+
 <a name="v4.13.2"></a>
 # v4.13.2 (2015-08-27)
 
