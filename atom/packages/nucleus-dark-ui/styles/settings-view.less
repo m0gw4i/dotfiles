@@ -3,17 +3,52 @@
 @import "octicon-mixins";
 
 .settings-view {
+  font-size: @font-size;
+
   .breadcrumb {
     .text(light);
   }
 
   .alert {
     border: 0;
+
+    button.close {
+      background: transparent;
+      text-shadow: none;
+      border: 0 !important;
+      padding: 0 !important;
+      opacity: 1;
+
+      &:hover {
+        background: transparent;
+        &:before {
+          color: @text-color-highlight;
+        }
+      }
+
+      &:before {
+        margin-right: 0;
+        transition: color @transition-time ease;
+      }
+    }
   }
 
   .alert-info {
     color: @text-color-info;
     background: mix(@text-color-info, @base-background-color, 32%);
+
+    button.close:before {
+      color: @text-color-info;
+    }
+  }
+
+  .alert-danger {
+    color: @text-color-error;
+    background: mix(@text-color-error, @base-background-color, 32%);
+
+    button.close:before {
+      color: @text-color-error;
+    }
   }
 
   .text(normal);
@@ -87,9 +122,9 @@
     background: transparent;
   }
 
-  .package-container .row:not(:first-child),
+  .package-container .row:not(:first-child) .package-card,
   .package-container > .package-card:not(:first-child) {
-    border-top: 1px solid @indent-guide-color;
+    border-top: 1px solid @base-border-color;
   }
 
   .collapsed .package-container .row {
@@ -119,38 +154,14 @@
   }
 
   button.uninstall-button.is-uninstalling {
-    color: @text-color-highlight !important;
+    color: @base-background-color !important;
     border-color: @button-border-color !important;
     background: @button-border-color;
   }
 
   button.install-button.is-installing {
-    color: @text-color-highlight !important;
+    color: @base-background-color !important;
     border-color: @background-color-info !important;
     background: @background-color-info;
-  }
-
-  input[type="checkbox"] {
-    &:focus {
-      box-shadow: none;
-    }
-    &:before,
-    &:after {
-      background: @base-background-color;
-    }
-  }
-
-  select.form-control {
-    .button(@button-border-color);
-    .text(normal);
-    height: @input-height;
-    line-height: @input-height;
-    text-transform: none;
-
-    &:focus,
-    &:hover {
-      background: @background-color-highlight;
-      color: @text-color;
-    }
   }
 }

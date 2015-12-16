@@ -6,10 +6,23 @@
   core:
     themes: [
       "nucleus-dark-ui"
-      "adventurous-syntax"
+      "material-syntax"
+    ]
+    disabledPackages: [
+      "wrap-guide"
     ]
   editor:
     invisibles: {}
     showIndentGuide: true
   minimap: {}
-  "atom-beautify": {}
+  "atom-beautify":
+    _analyticsUserId: "429e6bf6-520c-4c36-a886-73601bdc5af2"
+    beautifyEntireFileOnSave: false
+  "atom-material-ui":
+    panelContrast: true
+    disableAnimations: true
+    slimScrollbar: true
+    accentColor: "Orange"
+    compactTreeView: true
+  linter:
+    errorPanelHeight: 25

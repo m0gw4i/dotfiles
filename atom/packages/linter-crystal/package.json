@@ -1,0 +1,85 @@
+{
+  "name": "linter-crystal",
+  "main": "./lib/linter-crystal",
+  "version": "3.2.3",
+  "description": "Lint Crystal using the Crystal compiler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomLinter/linter-crystal.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-linter": "^1.0.3",
+    "atom-package-deps": "^2.1.3"
+  },
+  "package-deps": [
+    "language-crystal-actual",
+    "linter"
+  ],
+  "readme": "linter-crystal\n=========================\n\nThis linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to Crystal's builtin syntax analysis. It will be used with files that have the `Crystal` syntax.\n\nAs well, you must have the Crystal compiler installed on this system for this to work, to learn how to install this please visit the [Crystal Language Documentation](http://crystal-lang.org/docs/installation/index.html).\n\nThis package will ensure all dependencies are installed at activation.\n\n\n## Contributing\nIf you would like to contribute enhancements or fixes, please do the following:\n\n1. Fork the plugin repository.\n1. Hack on a separate topic branch created from the latest `master`.\n1. Commit and push the topic branch.\n1. Make a pull request.\n1. welcome to the club\n\nPlease note that modifications should follow these coding guidelines:\n\n- Indent is 2 spaces.\n- Code should pass coffeelint linter.\n- Vertical whitespace helps readability, don’t be afraid to use it.\n\nThank you for helping out!\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/AtomLinter/linter-crystal/issues"
+  },
+  "homepage": "https://github.com/AtomLinter/linter-crystal#readme",
+  "_id": "linter-crystal@3.2.3",
+  "_shasum": "b6d25002932dddb8dd3e8a7bdbb58b526eebf93b",
+  "_resolved": "file:../d-115112-90755-hg3i0h/package.tgz",
+  "_from": "../d-115112-90755-hg3i0h/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "xregexp",
+        "version": "3.0.0",
+        "path": "node_modules/atom-linter/node_modules/xregexp/xregexp-all.js"
+      },
+      {
+        "name": "atom-package-deps",
+        "version": "2.1.3",
+        "path": "node_modules/atom-package-deps/lib/main.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        "lib/linter-crystal.js",
+        "node_modules/atom-linter/node_modules/xregexp/xregexp-all.js",
+        "node_modules/atom-package-deps/lib/helper.js",
+        "node_modules/atom-package-deps/lib/main.js",
+        "node_modules/atom-package-deps/lib/view.js"
+      ],
+      ".coffee": [
+        "node_modules/atom-linter/lib/helpers.coffee"
+      ],
+      ".json": [
+        "node_modules/atom-linter/node_modules/xregexp/package.json",
+        "node_modules/atom-linter/package.json",
+        "node_modules/atom-package-deps/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "",
+          "spec"
+        ],
+        "dependencies": {
+          "atom-linter": "^1.0.3",
+          "atom-package-deps": "^2.1.3"
+        }
+      }
+    ]
+  }
+}

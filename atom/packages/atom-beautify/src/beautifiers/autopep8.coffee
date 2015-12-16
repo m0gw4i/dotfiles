@@ -14,12 +14,11 @@ module.exports = class Autopep8 extends Beautifier
   }
 
   beautify: (text, language, options) ->
-    # console.log('autopep8', options, text, language)
     @run("autopep8", [
       @tempFile("input", text)
       ["--max-line-length", "#{options.max_line_length}"] if options.max_line_length?
       ["--indent-size","#{options.indent_size}"] if options.indent_size?
       ["--ignore","#{options.ignore.join(',')}"] if options.ignore?
       ], help: {
-      link: "https://github.com/hhatto/autopep8"
+        link: "https://github.com/hhatto/autopep8"
       })

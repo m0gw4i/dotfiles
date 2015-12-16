@@ -37,6 +37,7 @@ module.exports = class Beautifiers extends EventEmitter
     'autopep8'
     'coffee-formatter'
     'coffee-fmt'
+    'clang-format'
     'htmlbeautifier'
     'csscomb'
     'gherkin'
@@ -52,8 +53,10 @@ module.exports = class Beautifiers extends EventEmitter
     'ruby-beautify'
     'rustfmt'
     'sqlformat'
+    'stylish-haskell'
     'tidy-markdown'
     'typescript-formatter'
+    'yapf'
   ]
 
   ###
@@ -119,7 +122,7 @@ module.exports = class Beautifiers extends EventEmitter
 
         # Remember Option's Key
         op.key =  field
-        
+
         # Remember Option's Language
         op.language = lang
 
@@ -380,7 +383,7 @@ module.exports = class Beautifiers extends EventEmitter
           beautifiers = @getBeautifiers(language.name, options)
 
           logger.verbose('options', options)
-          logger.verbose('beautifiers', beautifiers)
+          logger.verbose('beautifiers', _.map(beautifiers, 'name'))
 
           logger.verbose(language.name, filePath, options, allOptions)
 
@@ -393,7 +396,7 @@ module.exports = class Beautifiers extends EventEmitter
             beautifier = _.find(beautifiers, (beautifier) ->
               beautifier.name is preferredBeautifierName
             ) or beautifiers[0]
-            logger.verbose('beautifier', beautifier.name, beautifiers)
+            logger.verbose('beautifier', beautifier.name)
             transformOptions = (beautifier, languageName, options) ->
 
               # Transform options, if applicable
